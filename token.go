@@ -26,7 +26,7 @@ type JWTTokenBody struct {
 	AtHash         string      `json:"at_hash"`
 	Email          string      `json:"email"`
 	EmailVerified  interface{} `json:"email_verified"`
-	IsPrivateEmail string      `json:"is_private_email"`
+	IsPrivateEmail interface{} `json:"is_private_email"`
 	RealUserStatus int64       `json:"real_user_status"`
 	AuthTime       int64       `json:"auth_time"`
 	Nonce          string      `json:"nonce"`
