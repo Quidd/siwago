@@ -18,18 +18,18 @@ type JWTTokenHeader struct {
 
 //struct for JWT Body
 type JWTTokenBody struct {
-	Iss            string `json:"iss"`
-	Iat            int64  `json:"iat"`
-	Exp            int64  `json:"exp"`
-	Aud            string `json:"aud"`
-	Sub            string `json:"sub"`
-	AtHash         string `json:"at_hash"`
-	Email          string `json:"email"`
-	EmailVerified  string `json:"email_verified"`
-	IsPrivateEmail string `json:"is_private_email"`
-	RealUserStatus int64  `json:"real_user_status"`
-	AuthTime       int64  `json:"auth_time"`
-	Nonce          string `json:"nonce"`
+	Iss            string      `json:"iss"`
+	Iat            int64       `json:"iat"`
+	Exp            int64       `json:"exp"`
+	Aud            string      `json:"aud"`
+	Sub            string      `json:"sub"`
+	AtHash         string      `json:"at_hash"`
+	Email          string      `json:"email"`
+	EmailVerified  interface{} `json:"email_verified"`
+	IsPrivateEmail string      `json:"is_private_email"`
+	RealUserStatus int64       `json:"real_user_status"`
+	AuthTime       int64       `json:"auth_time"`
+	Nonce          string      `json:"nonce"`
 }
 
 //struct to hold the decoded idtoken
@@ -58,10 +58,10 @@ type Token struct {
 	Error string `json:"error"`
 	//After the token is fetched from apple, id token is validated
 	//this field stores the result of the validation check
-	Valid bool `json:"_"`
+	Valid bool `json:"-"`
 	//The decoded Id token
 	//Holds the decoded JWT Header, Body, Signature and result of validity check
-	DecodedIdToken *SiwaIdToken `json:"_"`
+	DecodedIdToken *SiwaIdToken `json:"-"`
 }
 
 func (self Token) String() string {

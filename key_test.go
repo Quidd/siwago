@@ -1,11 +1,14 @@
 package siwago
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestAppleKeys(t *testing.T) {
 
 	//multiple keys from apple
-	kids := []string{"86D88Kf", "eXaunmL"}
+	//kids := []string{"86D88Kf", "eXaunmL"}
+	kids := []string{"fh6Bs8C", "lVHdOx8ltR"}
 
 	for _, kid := range kids {
 		t.Logf("Testing kid=%s", kid)
